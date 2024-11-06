@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  titulo: string = 'DoctorApp';
+  titulo: string = 'Bienvenido a DoctorApp';
   usuarios: any;
 
   constructor(private http: HttpClient){
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
       error: error=> console.error(error),
       complete: ()=> console.log('La solicitud esta completa')
 
-    })
+    });
   }
 
 
