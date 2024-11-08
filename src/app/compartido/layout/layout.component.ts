@@ -18,15 +18,17 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const usuarioToken = this.compartidoService.obtenerSesion();
-    if(usuarioToken!=null)
+    const usuarioSesion = this.compartidoService.obtenerSesion();
+    if(usuarioSesion!=null)
     {
-      this.username = usuarioToken.username;
+      this.username = usuarioSesion;
     }
   }
-  cerrarSesion(){
+  cerrarSesion() {
     this.compartidoService.eliminarSesion();
+
     this.cookieService.delete('Authorization','/');
+
     this.router.navigate(['login']);
   }
 
